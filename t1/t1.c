@@ -42,3 +42,13 @@ void le_notas (float* medias) {
 	fclose(f);
 }
 
+void busca_aluno (char* nome, char nomes[][50], int n, float* medias){
+	int i;
+	for (i=0; i<n; i++){
+		if (strstr(nomes[i], nome)!=NULL) {
+		printf ("%f %s\n", medias[i], nomes[i]);
+		}
+	}
+}
+
+
