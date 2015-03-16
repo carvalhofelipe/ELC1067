@@ -51,4 +51,17 @@ void busca_aluno (char* nome, char nomes[][50], int n, float* medias){
 	}
 }
 
-
+int main(int argc, char** argv){
+	char* nome;
+	int matriculas[50];
+        char nomes[50][50];
+        int n;
+	float medias[50];
+	if(argc > 1){
+		strcpy(nome, argv[1]);
+        }
+        printf("%s\n", nome);
+        le_alunos(matriculas, nomes, &n);	
+        le_notas(medias);			
+        busca_aluno(nome, nomes, n, medias);	
+}
