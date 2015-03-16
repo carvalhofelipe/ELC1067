@@ -28,3 +28,17 @@ void le_alunos(int* matriculas, char nomes[][50], int* n){
 	*n = linha;
 	fclose(f);
 }
+
+void le_notas (float* medias) {
+	int i=0, mat;
+	float nota1, nota2;
+	FILE* f = fopen("notas.txt", "r");
+	while(feof(f) == 0){
+		if(fscanf(f, "%d %f %f\n", &mat, &nota1, &nota2) <= 0)
+        	break;
+		medias[i] = (nota1 + nota2)/2;
+		i++;
+	}
+	fclose(f);
+}
+
